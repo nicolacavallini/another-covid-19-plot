@@ -45,6 +45,8 @@ def crunch_json_data(data_list):
         discover_ratio.append(ipd/tpd)
         infetti_per_day.append(ipd)
 
+    
+
     discover_ratio = np.array(discover_ratio)
     days = np.arange(1,discover_ratio.shape[0]+1)
 
