@@ -10,6 +10,7 @@ from bokeh.models import HoverTool
 from pathlib import Path
 import numpy as np
 
+from datetime import datetime
 
 def prepare_data_dictionary(data,data_list,key):
 
@@ -33,7 +34,10 @@ def populate_data(data,data_list,key):
     for d in data_list:
         if d[codice] < 900:
             data[d[denominazione]]["total_positive"].append(d["totale_casi"])
-            data[d[denominazione]]["date"].append(d['data'][:10])
+
+            date_ = datetime.strptime(d['data'][:10],"%Y-%m-%d").strftime("%m-%d")
+
+            data[d[denominazione]]["date"].append(date_)
             if len(data[d[denominazione]]["total_positive"]) == 1:
                 data[d[denominazione]]["dayly_new_positvie"].append(0)
                 data[d[denominazione]]["dayly_increment"].append(0)

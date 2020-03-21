@@ -79,7 +79,7 @@ def crunch_json_data(data_list):
 
     my_plot(f2,date,tamponi_per_day)
 
-    f3 = figure(plot_width=900, plot_height=200,title='daly new positives',x_range=date)
+    f3 = figure(plot_width=900, plot_height=200,title='daily new positives',x_range=date)
 
     my_plot(f3,date,infetti_per_day)
 
